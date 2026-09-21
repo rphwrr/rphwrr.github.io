@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<title>Les Catégories</title>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+	<center><h1>Les Catégories</h1></center>
+	
+	<div><a href="../home.html">Accueil</a></div>
+	<div><a href="../home.html">Page précédente</a></div>
+	<div><a href="fonc.html">Page suivante</a></div>
+	
+	<h2>Catégories</h2>
+	
+	<h3>Qu'est-ce qu'une catégorie ?</h3>
+	
+	<p>Une <b><u>catégorie</u></b> est la donnée :
+	<ul>
+	<li>D'une classe d'<i>objets</i> notée \(\mathrm{Ob}(\mathscr{C})\).</li>
+	<li>D'une classe de <i>flèches</i> de \(A\) dans \(B\), pour tous \(A\) et \(B\in \mathrm{Ob}(\mathscr{C})\), notée \(\mathrm{Hom}_\mathscr{C}(A,B)\).</li>
+	<li>Pour tous objets \(A\), \(B\) et \(C\in \mathrm{Ob}(\mathscr{C})\) et pour toutes flèches \(f\in \mathrm{Hom}_\mathscr{C}(A,B)\) et \(g\in \mathrm{Hom}_\mathscr{C}(B,C)\), d'une flèche \(g\circ f\in \mathrm{Hom}_\mathscr{C}(A,C)\).
+	</ul>
+	Ces données devant vérifier :
+	<ul>
+	<li>\(\forall A\in \mathrm{Ob}(\mathscr{C}), \exists 1_A\in \mathrm{Hom}_\mathscr{C}(A,A), \forall B\in \mathrm{Ob}(\mathscr{C}),
+	\begin{cases}\forall f\in \mathrm{Hom}_\mathscr{C}(B,A), 1_A\circ f=f\\\forall g\in \mathrm{Hom}_\mathscr{C}(A,B), g\circ 1_A=g\end{cases}\)</li>
+	<li>\(\forall A,B,C,D\in \mathrm{Ob}(\mathscr{C}), \forall f\in \mathrm{Hom}_\mathscr{C}(A,B),\forall g\in \mathrm{Hom}_\mathscr{C}(B,C),\forall h\in \mathrm{Hom}_\mathscr{C}(C,D), (h\circ g)\circ f=h\circ (g\circ f)=:h\circ g\circ f\).</li>
+	</ul>
+	
+	<center>
+	<img src="diag/identity.png" height=250 width=250>
+	<img src="diag/associativity.png" height=250 width=250>
+	</center>
+	
+	On notera \( f\colon A\to B\) plutôt que \(f\in \mathrm{Hom}_\mathscr{C}(A,B)\) s'il n'y a pas d'ambiguïtés.
+	</p>
+
+	<h3>Première propriété</h3>
+	Soient \(\mathscr{C}\) une catégorie et \(A\in \mathrm{Ob}(\mathscr{C})\). Alors la flèche <i>identité</i> de \(A\), notée \(1_A\) est unique. En effet, si l'on dispose d'une autre flèche identité \(e_A\) :
+	\[\begin{cases}1_A\circ e_A=e_A\\ 1_A\circ e_A=1_A\end{cases}\implies e_A=1_A.\]
+	
+	<h3>Exemples de catégories</h3>
+	<p> Vous connaissez probablement plusieurs catégories. Voici un tableau qui regroupent les plus communes.
+	
+	<center>
+	<table border=1>
+		<tr>
+			<th> Nom</th>
+			<th> Objets</th>
+			<th> Flèches</th>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Set}\) ou \(\mathbf{Ens}\)</td>
+			<td>Ensembles</td>
+			<td>Applications</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Mon}\)</td>
+			<td>Monoïdes</td>
+			<td>Morphismes de monoïdes</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Grp}\)</td>
+			<td>Groupes</td>
+			<td>Morphismes de groupes</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Ab}\)</td>
+			<td>Groupes abéliens</td>
+			<td>Morphismes de groupes</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Ring}\)</td>
+			<td>Anneaux</td>
+			<td>Morphismes d'anneaux</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Top}\)</td>
+			<td>Espaces topologiques</td>
+			<td>Applications continues</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Ord}\)</td>
+			<td>Ensembles ordonnés</td>
+			<td>Applications croissantes</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Vect}_\mathbb{K}\)</td>
+			<td>\(\mathbb{K}\)-espaces vectoriels</td>
+			<td>Applications linéaires</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Mes}\)</td>
+			<td>Espaces mesurables</td>
+			<td>Applications mesurables</td>
+		</tr>
+		<tr>
+			<td>\(\mathbf{Grph}\)</td>
+			<td>Graphes</td>
+			<td>Morphismes de graphes</td>
+		</tr>
+	</table>
+	</center>
+</p>
+
+
+	<h2>Zoom sur les flèches</h2>
+	<p>On se place dans une catégorie \(\mathscr{C}\). Une flèche entre deux objets de \(\mathscr{C}\) peut avoir plusieurs propriétés.</p>
+	<h3>Monomorphisme</h3>
+	<p>Soit \(f\colon A\to B\) une flèche de \(\mathscr{C}\). On dit que \(f\) est un <b><u>monomorphisme</u></b> si pour toutes flèches \(g,h\colon C\to A\) de \(\mathscr{C}\) :
+	\[f\circ g=f\circ h\implies g=h.\]</p>
+	<h3>Épimorphisme</h3>
+	<p>Soit \(f\colon A\to B\) une flèche de \(\mathscr{C}\). On dit que \(f\) est un <b><u>épimorphisme</u></b> si pour toutes flèches \(g,h\colon B\to C\) de \(\mathscr{C}\) :
+	\[g\circ f=h\circ f\implies g=h.\]</p>
+	<h3>Isomorphisme</h3>
+	<p>Soit \(f\colon A\to B\) une flèche de \(\mathscr{C}\). On dit que \(f\) est un <b><u>isomorphisme</u></b> s'il existe \(g\colon B\to A\) telle que :
+	\[g\circ f=1_A\quad\text{et}\quad f\circ g=1_B.\]
+	On peut aisément démontrer que cette flèche \(g\colon B\to A\) est unique. On la note alors \(f^{-1}\). Il s'agit d'un isomorphisme de \(B\) dans \(A\).
+	</p>
+	
+	<h3>Quelques mots sur les isomorphismes</h3>
+	<p>Un isomorphisme est toujours à la fois un monomorphisme et un épimorphisme. En effet, soit \(f\colon A\to B\) une flèche dans une catégorie \(\mathscr{C}\). Soient \(g,h\colon C\to A\) flèches de la même catégorie.
+	Supposons que \(f\circ g=f\circ h\). Alors : \(f^{-1}\circ f\circ g=f^{-1}\circ f\circ h\implies g=h\). Cela montre que \(f\) est un monomorphisme. On raisonne de la même façon pour montrer qu'il s'agit d'un épimorphisme.
+	</p>
+	<p>
+	Attention, la réciproque est fausse ! Si \(f\) est un monomorphisme-épimorphisme, il se peut que \(f\) ne soit pas un isomorphisme. En effet, plaçons-nous dans la catégorie \(\mathbf{Ring}\). Alors il existe une unique flèche (i.e. morphisme d'anneaux) \(\iota\colon\mathbb{Z}\to\mathbb{Q}\).
+	\(\iota\) est un monomorphisme-épimorphisme mais n'est pas un isomorphisme.
+	</p>
+	
+	<p> Si \(A\) et \(B\) sont deux objets de \(\mathscr{C}\), on dit que \(A\) et \(B\) sont <b><u>isomorphes</u></b> s'il existe un isomorphisme \(f\colon A \to B\). Il s'agit d'une relation d'équivalence sur la classe des groupes. On note alors :
+	\[A\cong B.\]</p>
+	
+	<div><a href="../home.html">Accueil</a></div>
+	<div><a href="..home.html">Page précédente</div>
+	<div><a href="fonc.html">Page suivante</a></div>
+	
+</body>
+
+</html>

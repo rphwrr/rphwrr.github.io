@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<title>Les Foncteurs</title>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<center><h1>Les Foncteurs</h1></center>
+	
+	<div><a href="../home.html">Accueil</a></div>
+	<div><a href="cat.html">Page précédente</a></div>
+	<div><a href="tranat.html">Page suivante</a></div>
+	
+	<h2>Généralités sur les foncteurs</h2>
+	
+	<h3>Un exemple introductif : le groupe fondamental</h3>
+	
+	<p>La théorie des catégories a un côté un peu "méta" : elle cherche à regrouper dans une seule théorie les raisonnements communs à toutes les branches des mathématiques.
+	On y définit la notion d'<i>objets</i>, la notion de <i>flèches</i>, etc. Mais en mathématiques, on peut être amené à lier des objets de nature différentes. Je pense à l'exemple du groupe fondamental.
+	En effet, si j'ai un espace topologique \( X\) et que je considère un point \(x\in X\), je peux étudier la structure algébrique liée aux chemins que je peux faire en partant de \(x\) pour y revenir.
+	Plus précisément, je peux faire de l'homotopie et étudier :
+	\[\pi_1(X,x).\]
+	Ainsi, à un espace topologique <i>pointé</i> (i.e. dont on a précisé un point), on associe un groupe appelé le groupe fondamental ou groupe de Poincaré.
+	Mieux que cela, si je possède deux espaces topologiques pointés \((X,x)\) et \((Y,y\)), dès que j'ai une application continue \(f\colon X\to Y\) telle que \(f(x)=y\), on obtient un morphisme de groupes :
+	\[\begin{array}{rrcl}
+		\pi_1(f)\colon & \pi_1(X,x)&\to&\pi_1(Y,y)\\
+		& [\gamma]&\mapsto & [f\circ\gamma]
+	\end{array}\]
+	Les détails ne sont pas importants ici. La seule chose à comprendre, c'est qu'il est parfois utile d'associer un groupe à un espace topologique et que les applications continues entre deux espaces topologiques 
+	se retranscrivent en morphisme de groupes entre les groupes associés.
+	</p>
+	
+	<h3>Qu'est-ce qu'un foncteur ?</h3>
+	
+	Considérons \(\mathscr{C}\) et \(\mathscr{D}\) deux catégories. Un <b><u>foncteur</u></b> (covariant) \(F\) de \(\mathscr{C}\) dans \(\mathscr{D}\) est la donnée :
+	<ul>
+	<li>D'un objet \(F(A)\in \mathrm{Ob}(\mathscr{D})\) pour tout \(A\in \mathrm{Ob}(\mathscr{C})\).
+	<li>D'une flèche \(F(f)\colon F(A)\to F(B)\) dans \(\mathscr{D}\) pour toute flèche \(f\colon A\to B\) de \(\mathscr{C}\).
+	</ul>
+	Ces données devant vérifier :
+	<ul>
+	<li>\(\forall A\in \mathrm{Ob}(\mathscr{C}), F(1_A)=1_{F(A)}\).</li>
+	<li>\(\forall A,B,C\in \mathrm{Ob}(\mathscr{C}), \forall f\colon A\to B, \forall g\colon B\to C, F(g\circ f)=F(g)\circ F(f)\).</li>
+	</ul>
+	
+	<h3>Exemples de foncteurs</h3>
+	
+</body>
+
+</html>
