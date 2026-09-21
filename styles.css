@@ -1,0 +1,25 @@
+body{
+	color: #F7F6CF;
+	font-family: Georgia, serif;
+	background-color: #212E53;
+	margin-top: 10px; 
+    margin-right: 40px; 
+    margin-bottom: 30px; 
+    margin-left: 40px; 
+}
+
+h1{
+	color: #F4CFDF;
+}
+
+h2{
+	color: #F4CFDF;
+}
+
+h3{
+	color: #4AA3A2;
+}
+
+a{
+	color:#B6D8F2;
+}
